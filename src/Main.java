@@ -4,16 +4,16 @@ public class Main {
         System.out.println("Tester tråder i Java...");
 
         ThreadMachine t1 = new ThreadMachine("En");
-        t1.start();
         ThreadMachine t2 = new ThreadMachine("To");
-        t2.start();
         ThreadMachine t3 = new ThreadMachine("Tre");
-        t3.start();
         ThreadMachine t4 = new ThreadMachine("Fire");
-        t4.start();
         ThreadMachine t5 = new ThreadMachine("Fem");
-        t5.start();
 
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+        t5.start();
     }
 }
 
@@ -34,12 +34,12 @@ class ThreadMachine implements Runnable {
                 System.out.println("Tråd " + threadName + " = " + i);
 
                 // Gi fra oss kontrollen:
-                Thread.yield();
+                //Thread.yield();
 
                 // Gjør noe "jobb"...
-                if (false) {
+                if (true) {
                     try {
-                        Thread.sleep(50);
+                        Thread.sleep(1);
                     } catch (InterruptedException e) {
                         System.out.println("Tråden ble avbrutt: " + threadName);
                     }
